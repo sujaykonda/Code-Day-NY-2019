@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
             animator.SetInteger("Walking State", 1);
         }
         if(Input.GetKey(KeyCode.W)){
-            animator.SetBool("Jumping", true);
+            animator.SetTrigger("Jumping");
         }
         rb.velocity = new Vector2(xv, yv);
         xv *= 0.85f;
