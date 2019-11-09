@@ -8,23 +8,35 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     float xv;
     float yv = 0f;
+    public bool canJump = true;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        yv = rb.velocity.y;        
         if(Input.GetKey(KeyCode.A)){
+            transform.eulerAngles = new Vector3(0,180,0);
             xv -= 1f;
             animator.SetInteger("Walking State", 1);
         }
         if(Input.GetKey(KeyCode.D)){
+            transform.eulerAngles = new Vector3(0,0,0);
             xv += 1f;
             animator.SetInteger("Walking State", 1);
         }
-        if(Input.GetKey(KeyCode.W)){
+        if(Input.GetKey(KeyCode.W)&&canJump){
+            yv += 5;
             animator.SetTrigger("Jumping");
+            canJump = false;
         }
-        rb.velocity = new Vector2(xv, yv);
+        if(Mathf.Abs(xv)<0.3){
+            animator.SetInteger("Walking State", 0);
+        }
+        rb.velocity = new Vector2(xv,yv);
         xv *= 0.85f;
         
+    }
+    void OnTriggerStay2D(Collider2D Other){
+        canJump = true;
     }
 }
