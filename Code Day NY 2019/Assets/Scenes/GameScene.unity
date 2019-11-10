@@ -1690,6 +1690,7 @@ MonoBehaviour:
   rb: {fileID: 1367728571}
   health: 10
   anim: {fileID: 1367728567}
+  TimeTilNextUpdate: 0.2
 --- !u!1 &1426446604
 GameObject:
   m_ObjectHideFlags: 0
@@ -2377,7 +2378,10 @@ MonoBehaviour:
   rb: {fileID: 1751314609}
   animator: {fileID: 493628814}
   spriteRenderer: {fileID: 493628815}
-  projectile: {fileID: 0}
+  projectileRight: {fileID: 3128113961873103292, guid: df49b87c584ba4349b9ba6422b2ea413,
+    type: 3}
+  projectileLeft: {fileID: 3564730086683963992, guid: 0bcda89bf88a879498ad0ee61f3c60c3,
+    type: 3}
 --- !u!61 &1751314607
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2391,7 +2395,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.7, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2417,7 +2421,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.7, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2513,7 +2517,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.8194258, y: -0.035605133}
+  m_Offset: {x: 0.12, y: -0.035605133}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2728,6 +2732,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 65527800577847456, guid: da615e10332da884b8024a07f4bfae16,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65527800577847456, guid: da615e10332da884b8024a07f4bfae16,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 65527800577847459, guid: da615e10332da884b8024a07f4bfae16,
         type: 3}
       propertyPath: m_Offset.y
@@ -2747,16 +2761,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Offset.x
       value: -0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 65527800577847456, guid: da615e10332da884b8024a07f4bfae16,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 65527800577847456, guid: da615e10332da884b8024a07f4bfae16,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
