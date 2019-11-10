@@ -20,6 +20,7 @@ public class BoxerAI : MonoBehaviour
         if(Time.time>TimeToUpdate){
             TimeToUpdate = TimeTilNextUpdate + Time.time;
             yv = rb.velocity.y;
+            xv *= 0.65f;
             if (Playpos.position.x < Pos.position.x)
             {
                 xv -= 1f;
