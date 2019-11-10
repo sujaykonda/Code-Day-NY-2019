@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     bool canJump = true;
     bool Shield = false;
     public GameObject loseScreen;
+    public GameObject winScreen;
     public Animator healthBar;
     float nextBullet = 0f;
     int melee = 0;
@@ -114,7 +115,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
             health = health/2;
             transform.position = new Vector3(-3f,2f,0f);
         }
-        if(health<=0){
+        if(health<=0 && winScreen.activeSelf == false){
             loseScreen.SetActive(true);
         }
     }
