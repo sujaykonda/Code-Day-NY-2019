@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     bool flipX = false;
     bool canJump = true;
     bool Shield = false;
+    public GameObject loseScreen;
     public Animator healthBar;
     float nextBullet = 0f;
     int melee = 0;
@@ -19,6 +20,9 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     public GameObject projectileRight;
     float damageUpdate = 0f;
     public GameObject projectileLeft;
+    void Start(){
+        loseScreen.SetActive(false);
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -109,6 +113,9 @@ public class PlayerController : MonoBehaviour,ITakeDamage
         if(transform.position.y<-5f){
             health = health/2;
             transform.position = new Vector3(-3f,2f,0f);
+        }
+        if(health<=0){
+            loseScreen.SetActive(true);
         }
     }
     void OnTriggerStay2D(Collider2D Other){
