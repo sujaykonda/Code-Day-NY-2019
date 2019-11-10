@@ -9,23 +9,27 @@ public class PlayerController : MonoBehaviour
     float xv;
     public SpriteRenderer spriteRenderer;
     float yv = 0f;
-    public bool canJump = true;
+    bool flipX = false;
+    bool canJump = true;
     bool Shield = false;
     bool dash = false;
     float health = 10;
+    public Sprite projectile;
 
     // Update is called once per frame
     void FixedUpdate()
     {
         yv = rb.velocity.y;        
         if(Input.GetKey(KeyCode.A)&&!Shield){
-            spriteRenderer.flipX = true;
+            flipX = true;
+            transform.eulerAngles = new Vector3(0,180,0);
             xv -= 1f;
             animator.SetInteger("Walking State", 1);
         }
         if(Input.GetKey(KeyCode.D) && !Shield)
         {
-            spriteRenderer.flipX = false;
+            flipX = false;
+            transform.eulerAngles = new Vector3(0,0,0);
             xv += 1f;
             animator.SetInteger("Walking State", 1);
         }
@@ -66,7 +70,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                if (spriteRenderer.flipX)
+                if (flipX)
                 {
                     xv -= 2f;
                 }
