@@ -28,5 +28,10 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    void OnTriggerEnter2D(Collider2D other){
+        if(other.gameObject.name=="BoxerBoi"){
+            other.gameObject.GetComponent<ITakeDamage>().damage(0.1f);
+        }
+    }
 
 }
