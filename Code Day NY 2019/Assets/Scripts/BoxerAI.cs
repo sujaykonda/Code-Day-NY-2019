@@ -11,49 +11,60 @@ public class BoxerAI : MonoBehaviour
     public Animator anim;
     float xv;
     float yv = 0f;
+    public float TimeTilNextUpdate = 1;
+    float TimeToUpdate = 0;
     // Update is called once per frame
     void FixedUpdate()
     {
-        yv = rb.velocity.y;
-        if (Playpos.position.x < Playpos.position.x)
-        {
-            xv -= 1f;
-            if (Playpos.position.y < Playpos.position.y)
+       
+        if(Time.time>TimeToUpdate){
+            TimeToUpdate = TimeTilNextUpdate + Time.time;
+            yv = rb.velocity.y;
+            if (Playpos.position.x < Pos.position.x)
             {
                 xv -= 1f;
+                if (Playpos.position.y < Pos.position.y)
+                {
+                    xv -= 1f;
+                    anim.SetBool("isWalking", true);
+                }
+                if (Playpos.position.y > Pos.position.y && Mathf.Abs(Playpos.position.x - Pos.position.x) <= 5)
+                {
+                    yv += 3f;
+                }
             }
-            if (Playpos.position.y > Playpos.position.y)
-            {
-                yv += 3f;
-            }
-        }
-        if (Playpos.position.x > Playpos.position.x)
-        {
-            xv += 1f;
-            if (Playpos.position.y < Playpos.position.y)
-            {
-                xv += 1f;
-            }
-            if (Playpos.position.y > Playpos.position.y)
-            {
-                yv += 3f;
-            }
-        }
-        if (Playpos.position.x == Playpos.position.x)
-        {
-            if (Playpos.position.y < Playpos.position.y)
+            if (Playpos.position.x > Pos.position.x)
             {
                 xv += 1f;
+                anim.SetBool("isWalking", true);
+                if (Playpos.position.y < Pos.position.y)
+                {
+                    xv += 1f;
+                }
+                if (Playpos.position.y > Playpos.position.y && Mathf.Abs(Playpos.position.x - Pos.position.x) <= 5)
+                {
+                    yv += 3f;
+                }
             }
-            if (Playpos.position.y > Playpos.position.y)
+            if (Playpos.position.x == Playpos.position.x)
             {
-                yv += 3f;
-            }
-            if (Playpos.position.y == Playpos.position.y)
-            {
+                if (Playpos.position.y < Pos.position.y)
+                {
+                    xv += 1f;
+                    anim.SetBool("isWalking", true);
+                }
+                if (Playpos.position.y > Pos.position.y)
+                {
+                    yv += 3f;
+                }
+                if (Playpos.position.y == Pos.position.y)
+                {
 
+                }
             }
+            rb.velocity = new Vector2(xv, yv);
+
         }
-        rb.velocity = new Vector2(xv, yv);
+
     }
 }
