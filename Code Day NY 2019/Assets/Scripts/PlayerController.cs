@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     bool flipX = false;
     bool canJump = true;
     bool Shield = false;
+    public Animator healthBar;
     int melee = 0;
     float health = 10;
     public GameObject projectileRight;
@@ -98,6 +99,8 @@ public class PlayerController : MonoBehaviour,ITakeDamage
             animator.SetBool("Shield", false);
             animator.SetInteger("Attack", 0);
         }
+        
+        healthBar.SetFloat("Health", health);
     }
     void OnTriggerStay2D(Collider2D Other){
         if(Other.transform.position.y<(transform.position.y-1.1f))
@@ -115,6 +118,8 @@ public class PlayerController : MonoBehaviour,ITakeDamage
         }
     }
     public void damage(float damage){
-        health -= damage;
+        if(!Shield){
+            health -= damage;
+        }
     }
 }

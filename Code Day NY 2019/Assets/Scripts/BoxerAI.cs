@@ -9,7 +9,6 @@ public class BoxerAI : MonoBehaviour, ITakeDamage
     public Rigidbody2D rb;
     public float health = 10;
     public Animator anim;
-    public Animator healthBar;
     float xv;
     float yv = 0f;
     public float TimeTilNextUpdate = 0.2f;
@@ -47,11 +46,10 @@ public class BoxerAI : MonoBehaviour, ITakeDamage
             }
             rb.velocity = new Vector2(xv, yv);
         }
-        healthBar.SetFloat("Health", health);
     }
-    void OnTriggerEnter2D(Collider2D other){
+    void OnTriggerStay2D(Collider2D other){
         if(other.gameObject.name == "Player"){
-            other.gameObject.transform.parent.gameObject.GetComponent<ITakeDamage>().damage(1);
+            other.gameObject.GetComponent<ITakeDamage>().damage(1);
         }
     }
     public void damage(float damage){
