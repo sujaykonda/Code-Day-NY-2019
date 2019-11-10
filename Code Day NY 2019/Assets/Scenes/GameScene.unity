@@ -212,7 +212,7 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -0.02, y: -0.06}
       - {x: -0.07, y: 0.04}
-      - {x: 0.049999997, y: 0.04}
+      - {x: 0.049999997, y: 0.03}
       - {x: 0.049999997, y: -0.06}
 --- !u!212 &68664503
 SpriteRenderer:
@@ -369,7 +369,7 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.07, y: -0.06}
+    - - {x: -0.07, y: -0.09}
       - {x: -0.02, y: 0.01}
       - {x: 0.049999997, y: 0.049999997}
       - {x: 0.049999997, y: -0.06}
@@ -955,7 +955,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.07, y: -0.06}
+    - - {x: -0.07116645, y: -0.061877903}
+      - {x: -0.045583226, y: -0.02593895}
       - {x: -0.02, y: 0.01}
       - {x: 0.049999997, y: 0.049999997}
       - {x: 0.049999997, y: -0.06}
@@ -1878,7 +1879,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1493550720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.9, y: 2.94, z: -12.04}
+  m_LocalPosition: {x: 2.9, y: 4.61, z: -12.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2104,7 +2105,7 @@ PolygonCollider2D:
     - - {x: -0.07, y: -0.06}
       - {x: -0.07, y: 0.04}
       - {x: 0, y: 0.01}
-      - {x: 0.049999997, y: -0.06}
+      - {x: 0.05786376, y: -0.070480324}
 --- !u!1 &1688094764
 GameObject:
   m_ObjectHideFlags: 0
@@ -2732,16 +2733,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 65527800577847456, guid: da615e10332da884b8024a07f4bfae16,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 65527800577847456, guid: da615e10332da884b8024a07f4bfae16,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 65527800577847459, guid: da615e10332da884b8024a07f4bfae16,
         type: 3}
       propertyPath: m_Offset.y
@@ -2761,6 +2752,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Offset.x
       value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 65527800577847456, guid: da615e10332da884b8024a07f4bfae16,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65527800577847456, guid: da615e10332da884b8024a07f4bfae16,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
