@@ -13,6 +13,7 @@ public class BoxerAI : MonoBehaviour, ITakeDamage
     float yv = 0f;
     public float TimeTilNextUpdate = 0.2f;
     float TimeToUpdate = 0;
+    bool jump = false;
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -34,7 +35,14 @@ public class BoxerAI : MonoBehaviour, ITakeDamage
                 anim.SetBool("IsWalking", true);
             }
             if(Mathf.Abs(Vector3.Distance(Playpos.position,Pos.position))<5f){
-                anim.SetBool("IsUppercutting", true);
+                if(Mathf.Abs(Playpos.position.y-Pos.position.y)<1){
+                    anim.SetBool("IsUppercutting", true);
+                }
+                else{
+                    anim.SetTrigger("IsJumping");
+                    jump = true;
+                }
+
             }
             rb.velocity = new Vector2(xv, yv);
 
@@ -44,4 +52,5 @@ public class BoxerAI : MonoBehaviour, ITakeDamage
     public void damage(float damage){
         health-= damage;
     }
+    
 }
