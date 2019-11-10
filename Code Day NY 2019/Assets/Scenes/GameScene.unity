@@ -1978,6 +1978,7 @@ MonoBehaviour:
   healthBar: {fileID: 1362411605}
   anim: {fileID: 1367728567}
   winScreen: {fileID: 2006560685}
+  loseScreen: {fileID: 629272469}
   TimeTilNextUpdate: 0.2
 --- !u!61 &1367728573
 BoxCollider2D:
@@ -2693,6 +2694,7 @@ MonoBehaviour:
   animator: {fileID: 493628814}
   spriteRenderer: {fileID: 493628815}
   loseScreen: {fileID: 629272469}
+  winScreen: {fileID: 2006560685}
   healthBar: {fileID: 429390280}
   projectileRight: {fileID: 3128113961873103292, guid: df49b87c584ba4349b9ba6422b2ea413,
     type: 3}
@@ -2972,7 +2974,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &2006560686
 SpriteRenderer:
   m_ObjectHideFlags: 0
