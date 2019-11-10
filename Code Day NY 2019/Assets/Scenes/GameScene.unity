@@ -2408,6 +2408,21 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 65527800577847485, guid: da615e10332da884b8024a07f4bfae16,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65527800577847485, guid: da615e10332da884b8024a07f4bfae16,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65527800577847485, guid: da615e10332da884b8024a07f4bfae16,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 65527800577847458, guid: da615e10332da884b8024a07f4bfae16,
         type: 3}
       propertyPath: m_LocalPosition.x
