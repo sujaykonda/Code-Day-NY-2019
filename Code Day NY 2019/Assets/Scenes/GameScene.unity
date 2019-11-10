@@ -744,7 +744,7 @@ GameObject:
   - component: {fileID: 629272471}
   - component: {fileID: 629272470}
   m_Layer: 0
-  m_Name: pixil-frame-1 (7)
+  m_Name: Lose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2964,7 +2964,7 @@ GameObject:
   - component: {fileID: 2006560687}
   - component: {fileID: 2006560686}
   m_Layer: 0
-  m_Name: pixil-frame-0 (7)
+  m_Name: Win
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
