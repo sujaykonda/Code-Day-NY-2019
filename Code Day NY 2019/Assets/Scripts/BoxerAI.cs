@@ -35,13 +35,14 @@ public class BoxerAI : MonoBehaviour, ITakeDamage
                 xv += 1f;
                 anim.SetBool("IsWalking", true);
             }
-            if(Mathf.Abs(Vector3.Distance(Playpos.position,Pos.position))<5f){
+            if(Mathf.Abs(Vector3.Distance(Playpos.position,Pos.position))<2f){
                 if(Mathf.Abs(Playpos.position.y-Pos.position.y)<1){
                     anim.SetBool("IsUppercutting", true);
                 }
                 else{
                     anim.SetTrigger("IsJumping");
                     jump = true;
+                    anim.SetBool("IsUppercutting", false);
                 }
 
             }
