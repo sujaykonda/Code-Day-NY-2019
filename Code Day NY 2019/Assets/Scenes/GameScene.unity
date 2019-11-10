@@ -808,8 +808,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629272469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.94, y: 7.15, z: -10.16}
-  m_LocalScale: {x: 100, y: 100, z: 1}
+  m_LocalPosition: {x: 2.94, y: 5.03, z: -10.16}
+  m_LocalScale: {x: 12, y: 12, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -1977,6 +1977,7 @@ MonoBehaviour:
   rb: {fileID: 1367728571}
   healthBar: {fileID: 1362411605}
   anim: {fileID: 1367728567}
+  winScreen: {fileID: 2006560685}
   TimeTilNextUpdate: 0.2
 --- !u!61 &1367728573
 BoxCollider2D:
@@ -2691,6 +2692,7 @@ MonoBehaviour:
   rb: {fileID: 1751314609}
   animator: {fileID: 493628814}
   spriteRenderer: {fileID: 493628815}
+  loseScreen: {fileID: 629272469}
   healthBar: {fileID: 429390280}
   projectileRight: {fileID: 3128113961873103292, guid: df49b87c584ba4349b9ba6422b2ea413,
     type: 3}
@@ -3028,8 +3030,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2006560685}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.94, y: 5.38, z: -12}
-  m_LocalScale: {x: 100, y: 100, z: 1}
+  m_LocalPosition: {x: 2.94, y: 4.7, z: -4.1}
+  m_LocalScale: {x: 29.7, y: 19.64, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
