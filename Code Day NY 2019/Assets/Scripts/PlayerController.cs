@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     float yv = 0f;
     public bool canJump = true;
     bool Shield = false;
+    bool dash = false;
+    float health = 10;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.A))
             {
+                dash = true;
                 animator.SetInteger("Attack", 1); 
                 xv -= 2f;
 
@@ -57,6 +60,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.D))
             {
+                dash = true;
                 xv += 2f;
                 animator.SetInteger("Attack", 1);
             }
@@ -70,6 +74,7 @@ public class PlayerController : MonoBehaviour
                 {
                     xv += 2f;
                 }
+                dash = true;
                 animator.SetInteger("Attack", 1);
             }
         }
@@ -81,11 +86,15 @@ public class PlayerController : MonoBehaviour
         else
         {
             Shield = false;
+            dash = false;
             animator.SetBool("Shield", false);
             animator.SetInteger("Attack", 0);
         }
     }
     void OnTriggerStay2D(Collider2D Other){
         canJump = true;
+        if(dash&&Other.gameObject.name == "BoxerBoi"){
+            
+        }
     }
 }
