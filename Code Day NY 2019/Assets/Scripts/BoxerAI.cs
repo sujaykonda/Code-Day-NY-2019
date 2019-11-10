@@ -10,6 +10,8 @@ public class BoxerAI : MonoBehaviour, ITakeDamage
     float health = 10;
     public Animator healthBar;
     public Animator anim;
+    
+    public GameObject winScreen;
     float xv;
     float yv = 0f;
     public float TimeTilNextUpdate = 0.2f;
@@ -19,7 +21,7 @@ public class BoxerAI : MonoBehaviour, ITakeDamage
     // Update is called once per frame
     void FixedUpdate()
     {
-       
+        winScreen.SetActive(false);
         if(Time.time>TimeToUpdate){
             TimeToUpdate = TimeTilNextUpdate + Time.time;
             yv = rb.velocity.y;
@@ -54,6 +56,9 @@ public class BoxerAI : MonoBehaviour, ITakeDamage
             transform.position = new Vector3(3f,3f,0f);
         }
         healthBar.SetFloat("Health",health);
+        if(health<=0){
+            winScreen.SetActive(true);
+        }
     }
     void OnTriggerStay2D(Collider2D other){
         if(other.gameObject.name == "Player" && Time.time>timeDamage){
