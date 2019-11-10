@@ -369,9 +369,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.07, y: -0.09}
-      - {x: -0.02, y: 0.01}
-      - {x: 0.049999997, y: 0.049999997}
+    - - {x: -0.15168719, y: -0.099092685}
+      - {x: -0.08509617, y: -0.07564663}
+      - {x: -0.008189392, y: -0.0028779984}
+      - {x: 0.066636086, y: 0.04848702}
       - {x: 0.049999997, y: -0.06}
 --- !u!1 &303262988
 GameObject:
@@ -749,7 +750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &629272470
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1139,11 +1140,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.07116645, y: -0.061877903}
-      - {x: -0.045583226, y: -0.02593895}
-      - {x: -0.02, y: 0.01}
-      - {x: 0.049999997, y: 0.049999997}
-      - {x: 0.049999997, y: -0.06}
+    - - {x: -0.06511696, y: -0.073981635}
+      - {x: -0.03348429, y: -0.031990796}
+      - {x: -0.006388736, y: 0.00394817}
+      - {x: 0.049999997, y: 0.04}
+      - {x: 0.049999997, y: 0}
 --- !u!1 &912985039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2969,7 +2970,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &2006560686
 SpriteRenderer:
   m_ObjectHideFlags: 0
