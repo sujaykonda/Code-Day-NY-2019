@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     bool flipX = false;
     bool canJump = true;
     bool Shield = false;
-    bool dash = false;
+    int melee = 0;
     float health = 10;
     public Sprite projectile;
 
@@ -49,11 +49,12 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.W))
             {
+                melee = 2;
                 animator.SetInteger("Attack", 3);
             }
             else if (Input.GetKey(KeyCode.A))
             {
-                dash = true;
+                melee = 1;
                 animator.SetInteger("Attack", 1); 
                 xv -= 2f;
 
@@ -64,7 +65,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.D))
             {
-                dash = true;
+                melee = 1;
                 xv += 2f;
                 animator.SetInteger("Attack", 1);
             }
@@ -78,7 +79,7 @@ public class PlayerController : MonoBehaviour
                 {
                     xv += 2f;
                 }
-                dash = true;
+                melee = 1;
                 animator.SetInteger("Attack", 1);
             }
         }
@@ -90,14 +91,23 @@ public class PlayerController : MonoBehaviour
         else
         {
             Shield = false;
-            dash = false;
+            melee = 0;
             animator.SetBool("Shield", false);
             animator.SetInteger("Attack", 0);
         }
     }
     void OnTriggerStay2D(Collider2D Other){
-        canJump = true;
-        if(dash&&Other.gameObject.name == "BoxerBoi"){
+        if(Other.transform.position.y<(transform.position.y-1.1f))
+        {
+            canJump = true;
+        }
+        if(melee > 0&&Other.gameObject.name == "BoxerBoi"){
+            if(melee == 1){
+                Other.gameObject.GetComponent<ITakeDamage>().damage(0.5f);
+            }
+            if(melee == 2){
+                Other.gameObject.GetComponent<ITakeDamage>().damage(2);
+            }
             
         }
     }
