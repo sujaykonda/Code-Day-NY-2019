@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     float yv = 0f;
     public bool canJump = true;
-    public bool isShieding = false;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -30,6 +29,7 @@ public class PlayerController : MonoBehaviour
             yv += 5;
             animator.SetTrigger("Jumping");
             canJump = false;
+            animator.SetBool("Shield", false);
         }
         if(Mathf.Abs(xv)<0.3){
             animator.SetInteger("Walking State", 0);
@@ -42,29 +42,35 @@ public class PlayerController : MonoBehaviour
             {
 
             }
-            if (Input.GetKey(KeyCode.A))
+            else if (Input.GetKey(KeyCode.A))
             {
-                spriteRenderer.flipX = true;
                 xv -= 2f;
+                animator.SetInteger("Attack",1);
+
             }
-            if (Input.GetKey(KeyCode.S))
+            else if (Input.GetKey(KeyCode.S))
             {
                 yv += -5;
+                animator.SetInteger("Attack", 2);
             }
-            if (Input.GetKey(KeyCode.D))
+            else if (Input.GetKey(KeyCode.D))
             {
-                spriteRenderer.flipX = false;
                 xv += 2f;
+                animator.SetInteger("Attack",1);
+            }
+            else
+            {
+                animator.SetInteger("Attack", 0);
             }
         }
-        if (Input.GetKey(KeyCode.P))
+        else if (Input.GetKey(KeyCode.P))
         {
             canJump = false;
-            isShieding = true;
+            animator.SetBool("Shield", true);
         }
         else
         {
-            isShieding = false;
+            animator.SetBool("Shield", false);
         }
     }
     void OnTriggerStay2D(Collider2D Other){
