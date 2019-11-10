@@ -12,7 +12,7 @@ public class BoxerAI : MonoBehaviour
     float xv;
     float yv = 0f;
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         rb.velocity = new Vector2(xv, yv);
         if (Playpos.position.x < Playpos.position.x)
@@ -48,6 +48,10 @@ public class BoxerAI : MonoBehaviour
             if (Playpos.position.y > Playpos.position.y)
             {
                 yv += 3f;
+            }
+            if (Playpos.position.y == Playpos.position.y)
+            {
+
             }
         }
     }
