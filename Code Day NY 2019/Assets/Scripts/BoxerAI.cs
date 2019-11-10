@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxerAI : MonoBehaviour
+public class BoxerAI : MonoBehaviour, ITakeDamage
 {
     public Transform Playpos;
     public Transform Pos;
@@ -33,12 +33,15 @@ public class BoxerAI : MonoBehaviour
                 xv += 1f;
                 anim.SetBool("IsWalking", true);
             }
-            if (Playpos.position.x == Playpos.position.x)
-            {
+            if(Mathf.Abs(Vector3.Distance(Playpos.position,Pos.position))<5f){
+                anim.SetBool("IsUppercutting", true);
             }
             rb.velocity = new Vector2(xv, yv);
 
         }
 
+    }
+    public void damage(float damage){
+        health-= damage;
     }
 }
