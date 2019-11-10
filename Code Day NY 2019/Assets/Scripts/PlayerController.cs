@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
             xv += 1f;
             animator.SetInteger("Walking State", 1);
         }
-        if(Input.GetKey(KeyCode.W)&&canJump && !Shield)
+        if(Input.GetKeyDown(KeyCode.W)&&canJump && !Shield)
         {
             yv += 5;
             animator.SetTrigger("Jumping");
