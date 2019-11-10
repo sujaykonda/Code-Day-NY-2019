@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour
     bool Shield = false;
     int melee = 0;
     float health = 10;
-    public Sprite projectile;
+    public GameObject projectileRight;
+    public GameObject projectileLeft;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -62,6 +63,8 @@ public class PlayerController : MonoBehaviour
             else if (Input.GetKey(KeyCode.S))
             {
                 animator.SetInteger("Attack", 2);
+                Instantiate(projectileRight, transform.position + new Vector3(0.3f,0,0),Quaternion.identity); 
+                Instantiate(projectileLeft, transform.position + new Vector3(-1f,0,0),Quaternion.identity); 
             }
             else if (Input.GetKey(KeyCode.D))
             {
