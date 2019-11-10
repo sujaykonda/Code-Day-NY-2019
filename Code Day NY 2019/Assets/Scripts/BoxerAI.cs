@@ -13,6 +13,7 @@ public class BoxerAI : MonoBehaviour, ITakeDamage
     float yv = 0f;
     public float TimeTilNextUpdate = 0.2f;
     float TimeToUpdate = 0;
+    float timeDamage = 0f;
     bool jump = false;
     // Update is called once per frame
     void FixedUpdate()
@@ -46,10 +47,15 @@ public class BoxerAI : MonoBehaviour, ITakeDamage
             }
             rb.velocity = new Vector2(xv, yv);
         }
+        if(transform.position.y<-5f){
+            health = health/2;
+            transform.position = new Vector3(0f,2f,0f);
+        }
     }
     void OnTriggerStay2D(Collider2D other){
-        if(other.gameObject.name == "Player"){
+        if(other.gameObject.name == "Player" && Time.time>timeDamage){
             other.gameObject.GetComponent<ITakeDamage>().damage(1);
+            timeDamage = Time.time + 0.3f;
         }
     }
     public void damage(float damage){

@@ -101,6 +101,11 @@ public class PlayerController : MonoBehaviour,ITakeDamage
         }
         
         healthBar.SetFloat("Health", health);
+        
+        if(transform.position.y<-5f){
+            health = health/2;
+            transform.position = new Vector3(-2f,2f,0f);
+        }
     }
     void OnTriggerStay2D(Collider2D Other){
         if(Other.transform.position.y<(transform.position.y-1.1f))
