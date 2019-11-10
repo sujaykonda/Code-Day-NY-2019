@@ -1937,7 +1937,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367728566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 3, z: 0}
+  m_LocalPosition: {x: 10.18, y: 5.05, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2005,7 +2005,7 @@ MonoBehaviour:
   Playpos: {fileID: 493628816}
   Pos: {fileID: 1367728569}
   rb: {fileID: 1367728571}
-  health: 10
+  healthBar: {fileID: 1362411605}
   anim: {fileID: 1367728567}
   TimeTilNextUpdate: 0.2
 --- !u!61 &1367728573
@@ -3076,6 +3076,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 65527800577847456, guid: da615e10332da884b8024a07f4bfae16,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65527800577847456, guid: da615e10332da884b8024a07f4bfae16,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 65527800577847459, guid: da615e10332da884b8024a07f4bfae16,
         type: 3}
       propertyPath: m_Offset.y
@@ -3095,16 +3105,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Offset.x
       value: -0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 65527800577847456, guid: da615e10332da884b8024a07f4bfae16,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 65527800577847456, guid: da615e10332da884b8024a07f4bfae16,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
