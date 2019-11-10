@@ -10,22 +10,25 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     float yv = 0f;
     public bool canJump = true;
+    bool Shield = false;
 
     // Update is called once per frame
     void FixedUpdate()
     {
         yv = rb.velocity.y;        
-        if(Input.GetKey(KeyCode.A)){
+        if(Input.GetKey(KeyCode.A)&&!Shield){
             spriteRenderer.flipX = true;
             xv -= 1f;
             animator.SetInteger("Walking State", 1);
         }
-        if(Input.GetKey(KeyCode.D)){
+        if(Input.GetKey(KeyCode.D) && !Shield)
+        {
             spriteRenderer.flipX = false;
             xv += 1f;
             animator.SetInteger("Walking State", 1);
         }
-        if(Input.GetKey(KeyCode.W)&&canJump){
+        if(Input.GetKey(KeyCode.W)&&canJump && !Shield)
+        {
             yv += 5;
             animator.SetTrigger("Jumping");
             canJump = false;
@@ -40,37 +43,46 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.W))
             {
-
+                animator.SetInteger("Attack", 3);
             }
             else if (Input.GetKey(KeyCode.A))
             {
+                animator.SetInteger("Attack", 1); 
                 xv -= 2f;
-                animator.SetInteger("Attack",1);
 
             }
             else if (Input.GetKey(KeyCode.S))
             {
-                yv += -5;
                 animator.SetInteger("Attack", 2);
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 xv += 2f;
-                animator.SetInteger("Attack",1);
+                animator.SetInteger("Attack", 1);
             }
             else
             {
-                animator.SetInteger("Attack", 0);
+                if (spriteRenderer.flipX)
+                {
+                    xv -= 2f;
+                }
+                else
+                {
+                    xv += 2f;
+                }
+                animator.SetInteger("Attack", 1);
             }
         }
         else if (Input.GetKey(KeyCode.P))
         {
-            canJump = false;
+            Shield = true;
             animator.SetBool("Shield", true);
         }
         else
         {
+            Shield = false;
             animator.SetBool("Shield", false);
+            animator.SetInteger("Attack", 0);
         }
     }
     void OnTriggerStay2D(Collider2D Other){
