@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     float xv;
+    public SpriteRenderer spriteRenderer;
     float yv = 0f;
     public bool canJump = true;
 
@@ -15,12 +16,12 @@ public class PlayerController : MonoBehaviour
     {
         yv = rb.velocity.y;        
         if(Input.GetKey(KeyCode.A)){
-            transform.eulerAngles = new Vector3(0,180,0);
+            spriteRenderer.flipX = true;
             xv -= 1f;
             animator.SetInteger("Walking State", 1);
         }
         if(Input.GetKey(KeyCode.D)){
-            transform.eulerAngles = new Vector3(0,0,0);
+            spriteRenderer.flipX = false;
             xv += 1f;
             animator.SetInteger("Walking State", 1);
         }

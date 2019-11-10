@@ -613,7 +613,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!4 &493628816
 Transform:
   m_ObjectHideFlags: 0
@@ -2207,6 +2207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1751314609}
   animator: {fileID: 493628814}
+  spriteRenderer: {fileID: 493628815}
   canJump: 1
 --- !u!61 &1751314607
 BoxCollider2D:
@@ -2478,6 +2479,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 65527800577847485, guid: da615e10332da884b8024a07f4bfae16,
+        type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65527800577847456, guid: da615e10332da884b8024a07f4bfae16,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 65527800577847459, guid: da615e10332da884b8024a07f4bfae16,
         type: 3}
       propertyPath: m_Offset.y
@@ -2497,11 +2508,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Offset.x
       value: -0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 65527800577847456, guid: da615e10332da884b8024a07f4bfae16,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
