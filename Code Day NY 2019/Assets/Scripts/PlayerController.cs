@@ -35,6 +35,10 @@ public class PlayerController : MonoBehaviour
         }
         rb.velocity = new Vector2(xv,yv);
         xv *= 0.85f;
+        if (Input.GetKey(KeyCode.O))
+        {
+
+        }
         
     }
     void OnTriggerStay2D(Collider2D Other){
