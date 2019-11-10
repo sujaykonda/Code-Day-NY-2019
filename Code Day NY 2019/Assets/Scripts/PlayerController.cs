@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     float yv = 0f;
     public bool canJump = true;
+    public bool isShieding = false;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -35,7 +36,36 @@ public class PlayerController : MonoBehaviour
         }
         rb.velocity = new Vector2(xv,yv);
         xv *= 0.85f;
-        
+        if (Input.GetKey(KeyCode.O))
+        {
+            if (Input.GetKey(KeyCode.W))
+            {
+
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                spriteRenderer.flipX = true;
+                xv -= 2f;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                yv += -5;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                spriteRenderer.flipX = false;
+                xv += 2f;
+            }
+        }
+        if (Input.GetKey(KeyCode.P))
+        {
+            canJump = false;
+            isShieding = true;
+        }
+        else
+        {
+            isShieding = false;
+        }
     }
     void OnTriggerStay2D(Collider2D Other){
         canJump = true;
