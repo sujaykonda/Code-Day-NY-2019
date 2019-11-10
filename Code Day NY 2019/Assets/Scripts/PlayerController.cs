@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     // Update is called once per frame
     void FixedUpdate()
     {
+        Debug.Log(health);
         yv = rb.velocity.y;        
         if(Input.GetKey(KeyCode.A)&&!Shield){
             flipX = true;
