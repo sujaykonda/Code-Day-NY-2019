@@ -13,9 +13,11 @@ public class PlayerController : MonoBehaviour,ITakeDamage
     bool canJump = true;
     bool Shield = false;
     public Animator healthBar;
+    float nextBullet = 0f;
     int melee = 0;
     float health = 10;
     public GameObject projectileRight;
+    float damageUpdate = 0f;
     public GameObject projectileLeft;
 
     // Update is called once per frame
@@ -62,8 +64,9 @@ public class PlayerController : MonoBehaviour,ITakeDamage
                 xv -= 2f;
 
             }
-            else if (Input.GetKey(KeyCode.S))
+            else if (Input.GetKey(KeyCode.S)&&nextBullet<Time.time)
             {
+                nextBullet = Time.time + 0.3f;
                 animator.SetInteger("Attack", 2);
                 Instantiate(projectileRight, transform.position + new Vector3(0.3f,0,0),Quaternion.identity); 
                 Instantiate(projectileLeft, transform.position + new Vector3(-1f,0,0),Quaternion.identity); 
@@ -113,7 +116,8 @@ public class PlayerController : MonoBehaviour,ITakeDamage
         {
             canJump = true;
         }
-        if(melee > 0&&Other.gameObject.name == "BoxerBoi"){
+        if(melee > 0&&Other.gameObject.name == "BoxerBoi"&&damageUpdate<Time.time){
+            damageUpdate = Time.time + 0.3f; 
             if(melee == 1){
                 Other.gameObject.GetComponent<ITakeDamage>().damage(0.5f);
             }
