@@ -12,6 +12,7 @@ public class BoxerAI : MonoBehaviour, ITakeDamage
     public Animator anim;
     
     public GameObject winScreen;
+    public GameObject loseScreen;
     float xv;
     float yv = 0f;
     public float TimeTilNextUpdate = 0.2f;
@@ -56,7 +57,7 @@ public class BoxerAI : MonoBehaviour, ITakeDamage
             transform.position = new Vector3(3f,3f,0f);
         }
         healthBar.SetFloat("Health",health);
-        if(health<=0){
+        if(health<=0  && loseScreen.activeSelf == false){
             winScreen.SetActive(true);
         }
     }
