@@ -20,14 +20,18 @@ public class BoxerAI : MonoBehaviour
         if(Time.time>TimeToUpdate){
             TimeToUpdate = TimeTilNextUpdate + Time.time;
             yv = rb.velocity.y;
+            xv *= 0.65f;
             if (Playpos.position.x < Pos.position.x)
             {
                 xv -= 1f;
+                transform.eulerAngles = new Vector3(0, 180, 0);
+                anim.SetBool("IsWalking", true);
             }
             if (Playpos.position.x > Pos.position.x)
             {
+                transform.eulerAngles = new Vector3(0, 0, 0);
                 xv += 1f;
-                anim.SetBool("isWalking", true);
+                anim.SetBool("IsWalking", true);
             }
             if (Playpos.position.x == Playpos.position.x)
             {
