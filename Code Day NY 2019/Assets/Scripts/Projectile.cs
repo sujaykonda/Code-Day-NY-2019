@@ -32,6 +32,9 @@ public class Projectile : MonoBehaviour
         if(other.gameObject.name=="BoxerBoi"){
             other.gameObject.GetComponent<ITakeDamage>().damage(0.1f);
         }
+        if(other.gameObject.name!="Player"){
+            Destroy(gameObject);
+        }
     }
 
 }

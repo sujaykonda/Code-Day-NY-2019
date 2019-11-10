@@ -7,7 +7,8 @@ public class BoxerAI : MonoBehaviour, ITakeDamage
     public Transform Playpos;
     public Transform Pos;
     public Rigidbody2D rb;
-    public float health = 10;
+    float health = 10;
+    public Animator healthBar;
     public Animator anim;
     float xv;
     float yv = 0f;
@@ -50,8 +51,9 @@ public class BoxerAI : MonoBehaviour, ITakeDamage
         }
         if(transform.position.y<-5f){
             health = health/2;
-            transform.position = new Vector3(0f,2f,0f);
+            transform.position = new Vector3(3f,3f,0f);
         }
+        healthBar.SetFloat("Health",health);
     }
     void OnTriggerStay2D(Collider2D other){
         if(other.gameObject.name == "Player" && Time.time>timeDamage){

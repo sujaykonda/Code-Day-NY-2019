@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour,ITakeDamage
         
         if(transform.position.y<-5f){
             health = health/2;
-            transform.position = new Vector3(-2f,2f,0f);
+            transform.position = new Vector3(-3f,2f,0f);
         }
     }
     void OnTriggerStay2D(Collider2D Other){
