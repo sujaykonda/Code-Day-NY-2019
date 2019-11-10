@@ -11,7 +11,7 @@ public class BoxerAI : MonoBehaviour
     public Animator anim;
     float xv;
     float yv = 0f;
-    public float TimeTilNextUpdate = 1;
+    public float TimeTilNextUpdate = 0.2f;
     float TimeToUpdate = 0;
     // Update is called once per frame
     void FixedUpdate()
@@ -23,44 +23,14 @@ public class BoxerAI : MonoBehaviour
             if (Playpos.position.x < Pos.position.x)
             {
                 xv -= 1f;
-                if (Playpos.position.y < Pos.position.y)
-                {
-                    xv -= 1f;
-                    anim.SetBool("isWalking", true);
-                }
-                if (Playpos.position.y > Pos.position.y && Mathf.Abs(Playpos.position.x - Pos.position.x) <= 5)
-                {
-                    yv += 5f;
-                }
             }
             if (Playpos.position.x > Pos.position.x)
             {
                 xv += 1f;
                 anim.SetBool("isWalking", true);
-                if (Playpos.position.y < Pos.position.y)
-                {
-                    xv += 1f;
-                }
-                if (Playpos.position.y > Playpos.position.y && Mathf.Abs(Playpos.position.x - Pos.position.x) <= 5)
-                {
-                    yv += 5f;
-                }
             }
             if (Playpos.position.x == Playpos.position.x)
             {
-                if (Playpos.position.y < Pos.position.y)
-                {
-                    xv += 1f;
-                    anim.SetBool("isWalking", true);
-                }
-                if (Playpos.position.y > Pos.position.y)
-                {
-                    yv += 5f;
-                }
-                if (Playpos.position.y == Pos.position.y)
-                {
-
-                }
             }
             rb.velocity = new Vector2(xv, yv);
 
