@@ -30,7 +30,7 @@ public class BoxerAI : MonoBehaviour
                 }
                 if (Playpos.position.y > Pos.position.y && Mathf.Abs(Playpos.position.x - Pos.position.x) <= 5)
                 {
-                    yv += 3f;
+                    yv += 5f;
                 }
             }
             if (Playpos.position.x > Pos.position.x)
@@ -43,7 +43,7 @@ public class BoxerAI : MonoBehaviour
                 }
                 if (Playpos.position.y > Playpos.position.y && Mathf.Abs(Playpos.position.x - Pos.position.x) <= 5)
                 {
-                    yv += 3f;
+                    yv += 5f;
                 }
             }
             if (Playpos.position.x == Playpos.position.x)
@@ -55,7 +55,7 @@ public class BoxerAI : MonoBehaviour
                 }
                 if (Playpos.position.y > Pos.position.y)
                 {
-                    yv += 3f;
+                    yv += 5f;
                 }
                 if (Playpos.position.y == Pos.position.y)
                 {
