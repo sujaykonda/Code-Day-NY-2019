@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour,ITakeDamage
 {
     public Rigidbody2D rb;
     public Animator animator;
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
             xv += 1f;
             animator.SetInteger("Walking State", 1);
         }
-        if(Input.GetKeyDown(KeyCode.W)&&canJump && !Shield)
+        if(Input.GetKey(KeyCode.W)&&canJump && !Shield)
         {
             yv += 5;
             animator.SetTrigger("Jumping");
@@ -113,5 +113,8 @@ public class PlayerController : MonoBehaviour
             }
             
         }
+    }
+    void damage(float damage){
+        health -= damage;
     }
 }
